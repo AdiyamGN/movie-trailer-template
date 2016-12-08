@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Proza+Libre:400,500,700');
 
 
-// ------------------- Variable Definitions ------------------- //
+// ------------------------- Variable Definitions ------------------------- //
 
+$main:              #252529;
+$secondary:         #8b8b9f;
+$highlight:         #73e298;
+$white:             #FFFFFF;
+$description_color: #bbbebf;
+$border_color:      #d4d4d4;
+$newsletter_bg:     #2a2a2e;
 
+// ------------------------- General Styles ------------------------------ //
 
+* {
+	box-sizing: border-box;
+}
 
-
-
-// ------------------- General Styles ------------------------ //
-
-body {
+html, body {
 	font-family: 'Proza Libre', sans-serif;
 }
 
@@ -24,6 +31,246 @@ body {
 	clear: both;
 }
 
-/*h1 {
-	font-family: 'Aref Ruqaa', serif;
-}*/
+.wrapper {
+	width: 1440px;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+}
+
+
+// ------------------------- Header Styles ------------------------------ //
+
+#top-header {
+	padding: 1.5em 0;
+	.logo {
+		text-transform: uppercase;
+		font-weight: 700;
+		float: left;
+		font-size: 1.15em;
+		span {
+			font-weight: 300;
+			color: $highlight;
+		}
+	}
+	#main-nav {
+		float: right;
+		font-size: 0.9em;
+		padding-top: 1em;
+		a {
+			text-decoration: none;
+			color: $secondary;
+			padding-left: 1em;
+		}
+		.active {
+			border-bottom: 2px solid $highlight;
+			padding-left: 0;
+		}
+	}
+}
+
+// ------------------------- Banner Styles ------------------------------ //
+
+#banner {
+	background: url(../images/banner_background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 6.5em 0;
+	width: 100%;
+	.banner-wrapper {
+		width: 900px;
+		max-width: 90%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.poster {
+			width: 275px;
+			position: relative;
+			float: left;
+			.featured-image {
+				width: 100%;
+				max-width: 100%;
+				border-radius: 0.5em;
+				-webkit-box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.47);
+				-moz-box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.47);
+				box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.47);
+			}
+			.play-button {
+				position: absolute;
+				width: 80px;
+				left: 50%;
+				top: 50%;
+				margin: -40px 0 0 -40px;
+			}
+		}
+
+		.content {
+			float: left;
+			width: 500px;
+			margin-left: 100px;
+			.title {
+				display: inline;
+				font-size: 1.75em;
+				color: $white;
+			}
+			.ratings {
+				display: inline;
+				padding-left: 1em;
+				i {
+					font-size: 1.35em;
+					color: $highlight;
+					margin: 0 0.15em;
+				}
+				.inactive {
+					color: #48494d;
+				}
+			}
+			.description {
+				color: $description_color;
+				font-size: 1em;
+				line-height: 2;
+			}
+			.info {
+				color: $white;
+				font-size: 0.8em;
+				font-weight: 700;
+				margin-top: 3em;
+				span {
+					margin: 0 0.5em;
+				}
+			}
+		}
+	}
+}
+
+
+// ------------------------- Top Movies Styles ------------------------------ //
+
+.top-movies, .top-shows {
+	padding: 4em 0;
+	h2, .view-more {
+		display: inline;
+	}
+	header {
+		padding: 0 0 1.5em 0;
+		h2 {
+			font-size: 1.75em;
+		}
+		.view-more {
+			float: right;
+			font-size: 0.8em;
+			margin: 0.75em 3.5% 0;
+		}
+	}
+}
+
+.top-movies {
+	border-bottom: 1px solid $border_color;
+}
+
+.row {
+	width: 100%;
+	.post {
+		width: 14%;
+		float: left;
+		margin-right: 2.5%;
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: 100%;
+			border-radius: 0.5em;
+		}
+		.title {
+			font-size: 1em;
+			margin: 0.5em 0 0 0;
+			color: $main;
+		}
+		.post-info {
+			font-size: 0.75em;
+			color: $secondary;
+			margin: 0.5em 0;
+		}
+	}
+}
+
+// ------------------------- newsletter Styles ------------------------------ //
+
+.newsletter {
+	padding: 4em 0;
+	text-align: center;
+	background: $newsletter_bg;
+	.newsletter-inner {
+		width: 630px;
+		margin: 0 auto;
+		h2 {
+			font-size: 1.75em;
+			color: $white;
+		}
+		.sign-up-form {
+			margin-top: 3em;
+			input[type="text"], input[type="email"] {
+				font-family: 'Proza Libre', sans-serif;
+				width: 48%;
+				margin: 0 0.5%;
+				height: 3.25em;
+				border: none;
+				outline: none;
+				border-radius: .3em;
+				background: #404043;
+				padding: 0.5em 1.25em;
+				font-size: 0.8em;
+				color: $white;
+			}
+			.button {
+				font-family: 'Proza Libre', sans-serif;
+				border: none;
+				outline: none;
+				padding: 1.2em 4.5em;
+				background: $highlight;
+				color: white;
+				border-radius: 1.5em;
+				margin-top: 3em;
+				font-weight: 700;
+				font-size: 0.9em;
+			}
+		}
+	}
+}
+
+// ------------------------- Footer Styles ------------------------------ //
+
+.main-footer {
+	margin: 2.5em 0;
+	text-align: center;
+	.logo {
+		text-transform: uppercase;
+		font-weight: 700;
+		float: none;
+		font-size: 1.15em;
+		span {
+			font-weight: 300;
+			color: $highlight;
+		}
+	}
+	.copyright {
+		color: $secondary;
+		font-size: 0.75em;
+		margin: 0;
+	}
+	.links {
+		display: inline;
+		a {
+			text-decoration: none;
+			font-size: .75em;
+			margin: 0 0.5em;
+			color: $secondary;
+			&:hover {
+				color: $highlight;
+			}
+		}
+	}
+}
