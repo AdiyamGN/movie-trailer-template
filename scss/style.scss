@@ -65,11 +65,11 @@ h1, h2, h3, h4, h5, h6 {
 			color: $secondary;
 			padding-left: 1em;
 		}
-		.active {
-			border-bottom: 2px solid $highlight;
-			padding-left: 0;
-		}
 	}
+}
+
+.menu {
+	display: none;
 }
 
 // ------------------------- Banner Styles ------------------------------ //
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 		.view-more {
 			float: right;
 			font-size: 0.8em;
-			margin: 0.75em 3.5% 0;
+			margin: 0.75em 3.5% 0 0;
 		}
 	}
 }
@@ -205,6 +205,7 @@ h1, h2, h3, h4, h5, h6 {
 	background: $newsletter_bg;
 	.newsletter-inner {
 		width: 630px;
+		max-width: 90%;
 		margin: 0 auto;
 		h2 {
 			font-size: 1.75em;
@@ -273,4 +274,185 @@ h1, h2, h3, h4, h5, h6 {
 			}
 		}
 	}
+}
+
+// --------------------- Responsive Tablet Styles --------------------------- //
+
+
+@media only screen and (max-width: 768px) {
+	#main-nav {
+		display: none;
+		a {
+			padding-left: 0;
+		}
+	}
+
+	#top-header {
+		#main-nav {
+			a {
+				padding-left: 0;
+			}
+		}
+	}
+
+	#main-nav.active {
+		display: block;
+		width: 100%;
+		a {
+			display: block;
+			padding: 1em 0;
+			padding-left: 0;
+			border-bottom: 1px solid #e9e9e9;
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	.menu {
+		display: block;
+		float: right;
+		i {
+			font-size: 1.5em;
+			padding-top: 0.45em;
+			color: $main;
+		}
+	}
+
+	#banner {
+		padding: 3.5em 0;
+		width: 100%;
+		.banner-wrapper {
+			.poster {
+				width: 250px;
+				.play-button {
+					position: absolute;
+					width: 60px;
+					margin: -30px 0 0 -30px;
+				}
+			}
+			.content {
+				margin-left: 50px;
+				.title {
+					font-size: 1.5em;
+				}
+				.ratings {
+					i {
+						font-size: 1em;
+						margin: 0 0.15em;
+					}
+				}
+				.description {
+					font-size: 0.8em;
+				}
+				.info {
+					font-size: 0.7em;
+					margin-top: 2em;
+					span {
+						margin: 0 0.35em;
+					}
+				}
+			}
+		}
+	}
+
+
+	.top-movies, .top-shows {
+		padding: 2.5em 0;
+		h2, .view-more {
+			display: inline;
+		}
+		header {
+			padding: 0 0 1.5em 3.5%;
+			h2 {
+				font-size: 1.5em;
+			}
+			.view-more {
+				margin: 0.75em 3.5% 0 0;
+			}
+		}
+	}
+
+	.row {
+		width: 100%;
+		padding-left: 1em;
+		.post {
+			width: 30%;
+			margin: 0 1.25% 2em 1.25%;
+			.title {
+				font-size: 0.9em;
+			}
+			.post-info {
+				font-size: 0.6em;
+			}
+			&:nth-child(4) {
+				float: right;
+				margin-right: 3.5%;
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 580px) {
+	#banner {
+		.banner-wrapper {
+			display: block;
+			.poster {
+				display: block;
+				width: 250px;
+				float: none;
+				margin: 0 auto;
+			}
+			.content {
+				width: 100%;
+				margin: 3em auto 0 auto;
+				.info {
+					font-size: 0.6em;
+					span {
+						margin: 0 0.2em;
+					}
+				}
+			}
+		}
+	}
+
+	.top-movies, .top-shows {
+		header {
+			margin-bottom: 2em;
+		}
+	}
+
+	.row {
+		.post {
+			width: 250px;
+			margin: 0 auto 2em auto;
+			float: none;
+			&:nth-child(4) {
+				float: none;
+				margin-right: auto;
+			}
+		}
+	}
+
+	.newsletter {
+		padding: 3em 0;
+		.newsletter-inner {
+			h2 {
+				font-size: 1.25em;
+			}
+			.sign-up-form {
+				margin-top: 2em;
+				input[type="text"], input[type="email"] {
+					width: 90%;
+					margin: 0 0 1em 0;
+				}
+
+				.button {
+					margin: 2em;
+				}
+			}
+		}
+	}
+
 }
